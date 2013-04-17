@@ -1,0 +1,75 @@
+general {
+	output_format = i3bar
+        colors = true
+        interval = 5
+}
+
+order += "volume master"
+order += "disk /"
+order += "ipv6"
+order += "wireless wlan0"
+order += "ethernet eth0"
+order += "ethernet tun0"
+order += "ethernet usb0"
+order += ""
+order += "battery 0"
+order += "cpu_temperature 0"
+order += "load"
+order += "time"
+order += "tztime utc"
+
+wireless wlan0 {
+        format_up = "W: (%quality at %essid) %ip"
+        format_down = "W: down"
+}
+
+ethernet eth0 {
+        format_up = "E: %ip (%speed)"
+	format_down = "E: down"
+}
+
+ethernet tun0 {
+        format_up = "VPN: %ip (%speed)"
+	format_down = "VPN: down"
+}
+
+ethernet usb0 {
+        format_up = "USB: %ip (%speed)"
+	format_down = "USB: down"
+}
+
+battery 0 {
+        format = "%status %percentage %remaining"
+}
+
+run_watch DHCP {
+        pidfile = "/var/run/dhcpcd*.pid"
+}
+
+time {
+	format = "%Y-%m-%d %H:%M:%S Los Angeles"
+}
+
+tztime utc {
+	format = "%Y-%m-%d %H:%M:%S UTC"
+	timezone = "UTC"
+}
+
+load {
+	format = "%1min"
+}
+
+cpu_temperature 0 {
+	format = "T: %degrees °C"
+}
+
+disk "/" {
+	format = "%free"
+}
+
+volume master {
+	format = "♪: %volume"
+	device = "default"
+	mixer = "Master"
+	mixer_idx = 0
+}

@@ -1,0 +1,9 @@
+[color]
+	ui = auto
+[user]
+	email = lgbr@laserbunny.net
+	name = Benjamin Waldher
+[core]
+	editor = vim
+[push]
+	default = simple
