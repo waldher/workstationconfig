@@ -1,6 +1,4 @@
-export VDPAU_NVIDIA_NO_OVERLAY=1
-
-nohup .config/lastping/lastping.sh &> /dev/null
+nohup .config/lastping/lastping.sh &> /dev/null &
 
 if [ "lgbrbook" == "`hostname`" ]
 then
@@ -19,4 +17,4 @@ fi
 
 setxkbmap us -variant altgr-intl -option nodeadkeys
 
-i3 --force-xinerama -V >>~/.i3/log >&1
+i3 --force-xinerama -V >>~/.config/i3/log >&1
